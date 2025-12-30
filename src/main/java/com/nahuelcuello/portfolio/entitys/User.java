@@ -40,5 +40,5 @@ public class User {
     )
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private List<Projects> projects;
+    private List<Project> projects;
 }
