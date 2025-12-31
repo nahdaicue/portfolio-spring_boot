@@ -1,6 +1,7 @@
 package com.nahuelcuello.portfolio.services;
 
 import com.nahuelcuello.portfolio.entitys.Project;
+import com.nahuelcuello.portfolio.entitys.User;
 import com.nahuelcuello.portfolio.repositorys.ProjectRepository;
 import com.nahuelcuello.portfolio.repositorys.UserRepository;
 import java.util.List;
@@ -21,6 +22,14 @@ public class ProjectServiceImpl implements ProjectService {
     // CREATE
     @Override
     public Project save(Project project) {
+
+        // Validar que el user exista
+        Long userId = project.getUser().getId();
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+
+        project.setUser(user);
+
         return projectRepository.save(project);
     }
 
@@ -32,6 +41,7 @@ public class ProjectServiceImpl implements ProjectService {
         existingProject.setNameProject(project.getNameProject());
         existingProject.setDescription(project.getDescription());
         existingProject.setLanguages(project.getLanguages());
+        existingProject.setImageUrls(project.getImageUrls());
         existingProject.setUrlDemo(project.getUrlDemo());
         existingProject.setUrlGitFront(project.getUrlGitFront());
         existingProject.setUrlGitBack(project.getUrlGitBack());

@@ -26,14 +26,22 @@ public class Project {
 
     @ElementCollection
     @CollectionTable(
-        name = "project_languages",
-        joinColumns = @JoinColumn(name = "project_id")
+            name = "project_languages",
+            joinColumns = @JoinColumn(name = "project_id")
     )
     @Column(name = "language", nullable = false, length = 50)
     private List<String> languages;
 
     @Column(name = "url_demo")
     private String urlDemo;
+
+    @ElementCollection
+    @CollectionTable(
+            name = "project_images",
+            joinColumns = @JoinColumn(name = "project_id")
+    )
+    @Column(name = "image_url", nullable = false, length = 255)
+    private List<String> imageUrls;
 
     @Column(name = "url_git_front")
     private String urlGitFront;
