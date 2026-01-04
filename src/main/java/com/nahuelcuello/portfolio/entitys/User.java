@@ -20,9 +20,6 @@ public class User {
     @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(name = "last_name", length = 100)
-    private String lastName;
-
     @Column(name = "url_img")
     private String urlImg;
 
