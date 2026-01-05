@@ -1,5 +1,5 @@
 
-package com.nahuelcuello.portfolio.DTO;
+package com.nahuelcuello.portfolio.DTO.auth;
 
 import lombok.Getter;
 import lombok.Setter;
