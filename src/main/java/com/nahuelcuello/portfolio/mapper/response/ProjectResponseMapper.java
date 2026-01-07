@@ -1,10 +1,10 @@
 
-package com.nahuelcuello.portfolio.mapper;
+package com.nahuelcuello.portfolio.mapper.response;
 
 import com.nahuelcuello.portfolio.DTO.project.ProjectResponseDTO;
 import com.nahuelcuello.portfolio.entitys.Project;
 
-public class ProjectMapper {
+public class ProjectResponseMapper {
     
     public static ProjectResponseDTO toDto (Project project){
     
