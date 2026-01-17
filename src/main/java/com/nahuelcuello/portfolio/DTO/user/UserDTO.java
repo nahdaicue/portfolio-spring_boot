@@ -1,7 +1,7 @@
 
 package com.nahuelcuello.portfolio.DTO.user;
 
-import com.nahuelcuello.portfolio.DTO.project.ProjectResponseDTO;
+import com.nahuelcuello.portfolio.DTO.project.ProjectDTO;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,11 +12,11 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserProfileResponseDTO {
+public class UserDTO {
     
     private Long id;
     private String name;
     private String urlImg;
-    private List<ProjectResponseDTO> projects;
+    private List<ProjectDTO> projects;
     
 }

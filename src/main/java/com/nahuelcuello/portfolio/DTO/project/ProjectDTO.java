@@ -11,7 +11,7 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProjectResponseDTO {
+public class ProjectDTO {
     
     private Long id;
     private String nameProject;
