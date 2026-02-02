@@ -1,7 +1,7 @@
 package com.nahuelcuello.portfolio.controller;
 
 import com.nahuelcuello.portfolio.entitys.User;
-import com.nahuelcuello.portfolio.services.UserServiceImpl;
+import com.nahuelcuello.portfolio.services.UserService;
 import java.util.List;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/users")
 public class UserController {
 
-    private final UserServiceImpl userService;
+    private final UserService userService;
 
-    public UserController(UserServiceImpl userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 

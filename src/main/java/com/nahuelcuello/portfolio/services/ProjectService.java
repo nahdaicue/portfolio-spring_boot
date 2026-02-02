@@ -4,7 +4,7 @@ package com.nahuelcuello.portfolio.services;
 import com.nahuelcuello.portfolio.entitys.Project;
 import java.util.List;
 
-interface ProjectService {
+public interface ProjectService {
     
     Project save(Project project);
 

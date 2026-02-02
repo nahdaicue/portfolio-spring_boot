@@ -22,14 +22,9 @@ public class ProjectServiceImpl implements ProjectService {
     // CREATE
     @Override
     public Project save(Project project) {
-
-        // Validar que el user exista
-        Long userId = project.getUser().getId();
-        User user = userRepository.findById(userId)
+        User user = userRepository.findById(1L)
                 .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
-
         project.setUser(user);
-
         return projectRepository.save(project);
     }
 
