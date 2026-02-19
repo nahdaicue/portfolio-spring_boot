@@ -1,58 +1,64 @@
 package com.nahuelcuello.portfolio.controller;
 
+import com.nahuelcuello.portfolio.DTO.user.UserChangePasswordDTO;
+import com.nahuelcuello.portfolio.DTO.user.UserCreateDTO;
+import com.nahuelcuello.portfolio.DTO.user.UserDTO;
+import com.nahuelcuello.portfolio.DTO.user.UserUpdateDTO;
 import com.nahuelcuello.portfolio.entitys.User;
+import com.nahuelcuello.portfolio.mapper.UserMapper;
 import com.nahuelcuello.portfolio.services.UserService;
-import java.util.List;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin(origins = "*")
 public class UserController {
-
+    
     private final UserService userService;
-
+    
     public UserController(UserService userService) {
         this.userService = userService;
     }
-
-    // GET ALL
-    @GetMapping
-    public List<User> getUsers() {
-        return userService.findAll();
-    }
-
+    
     // GET BY ID
     @GetMapping("/{id}")
-    public User getUser(@PathVariable Long id) {
-        return userService.findById(id);
+    public ResponseEntity<UserDTO> getUser(@PathVariable Long id) {
+        User user = userService.findById(id);
+        UserDTO userDTO = UserMapper.toDto(user);
+        return new ResponseEntity<>(userDTO, HttpStatus.OK);
     }
-
+    
     // CREATE
     @PostMapping
-    public User create(@RequestBody User user) {
-        return userService.save(user);
+    public ResponseEntity<UserDTO> create(@RequestBody UserCreateDTO userCreateDTO) {
+        User user = UserMapper.fromCreateDTO(userCreateDTO);
+        User savedUser = userService.save(user);
+        UserDTO savedDTO = UserMapper.toDto(savedUser);
+        return new ResponseEntity<>(savedDTO, HttpStatus.CREATED);
     }
-
+    
     // UPDATE
     @PutMapping("/{id}")
-    public User update(
+    public ResponseEntity<UserDTO> update(
             @PathVariable Long id,
-            @RequestBody User user
+            @RequestBody UserUpdateDTO userUpdateDTO
     ) {
-        return userService.update(id, user);
+        User user = userService.findById(id);
+        UserMapper.updateFromDTO(userUpdateDTO, user);
+        User updatedUser = userService.update(id, user);
+        UserDTO updatedDTO = UserMapper.toDto(updatedUser);
+        return new ResponseEntity<>(updatedDTO, HttpStatus.OK);
     }
-
-    // DELETE
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id) {
-        userService.deleteById(id);
+    
+    // CHANGE PASSWORD
+    @PutMapping("/{id}/password")
+    public ResponseEntity<Void> changePassword(
+            @PathVariable Long id,
+            @RequestBody UserChangePasswordDTO passwordDTO
+    ) {
+        userService.changePassword(id, passwordDTO.getOldPassword(), passwordDTO.getNewPassword());
+        return new ResponseEntity<>(HttpStatus.OK);
     }
-
 }

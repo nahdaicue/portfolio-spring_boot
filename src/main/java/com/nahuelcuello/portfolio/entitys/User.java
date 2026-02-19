@@ -1,6 +1,7 @@
 package com.nahuelcuello.portfolio.entitys;
 
 import jakarta.persistence.*;
+import java.util.ArrayList;
 import lombok.*;
 
 import java.util.List;
@@ -37,5 +38,5 @@ public class User {
     )
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
-    private List<Project> projects;
+    private List<Project> projects = new ArrayList<>();
 }

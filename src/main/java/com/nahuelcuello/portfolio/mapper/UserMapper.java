@@ -1,6 +1,8 @@
 package com.nahuelcuello.portfolio.mapper;
 
+import com.nahuelcuello.portfolio.DTO.user.UserCreateDTO;
 import com.nahuelcuello.portfolio.DTO.user.UserDTO;
+import com.nahuelcuello.portfolio.DTO.user.UserUpdateDTO;
 import com.nahuelcuello.portfolio.entitys.User;
 import java.util.stream.Collectors;
 
@@ -14,6 +16,7 @@ public class UserMapper {
         UserDTO userDTO = new UserDTO();
         userDTO.setId(user.getId());
         userDTO.setName(user.getName());
+        userDTO.setEmail(user.getEmail());
         userDTO.setUrlImg(user.getUrlImg());
 
         if (user.getProjects() != null) {
@@ -38,5 +41,21 @@ public class UserMapper {
         user.setUrlImg(dto.getUrlImg());
 
         return user;
+    }
+     public static User fromCreateDTO(UserCreateDTO dto) {
+        User user = new User();
+        user.setName(dto.getName());
+        user.setEmail(dto.getEmail());
+        user.setPassword(dto.getPassword());
+        user.setUrlImg(dto.getUrlImg());
+        return user;
+    }
+    
+ 
+    public static void updateFromDTO(UserUpdateDTO dto, User user) {
+        user.setName(dto.getName());
+        user.setEmail(dto.getEmail());
+        user.setUrlImg(dto.getUrlImg());
+
     }
 }

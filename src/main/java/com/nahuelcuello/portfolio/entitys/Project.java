@@ -1,6 +1,7 @@
 package com.nahuelcuello.portfolio.entitys;
 
 import jakarta.persistence.*;
+import java.util.ArrayList;
 import lombok.*;
 
 import java.util.List;
@@ -30,7 +31,7 @@ public class Project {
             joinColumns = @JoinColumn(name = "project_id")
     )
     @Column(name = "language", nullable = false, length = 50)
-    private List<String> languages;
+    private List<String> languages = new ArrayList<>();
 
     @Column(name = "url_demo")
     private String urlDemo;
@@ -41,7 +42,7 @@ public class Project {
             joinColumns = @JoinColumn(name = "project_id")
     )
     @Column(name = "image_url", nullable = false, length = 255)
-    private List<String> imageUrls;
+    private List<String> imageUrls = new ArrayList<>();
 
     @Column(name = "url_git_front")
     private String urlGitFront;
