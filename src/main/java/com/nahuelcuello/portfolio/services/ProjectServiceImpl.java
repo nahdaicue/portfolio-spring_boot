@@ -2,8 +2,8 @@ package com.nahuelcuello.portfolio.services;
 
 import com.nahuelcuello.portfolio.entitys.Project;
 import com.nahuelcuello.portfolio.entitys.User;
-import com.nahuelcuello.portfolio.repositorys.ProjectRepository;
-import com.nahuelcuello.portfolio.repositorys.UserRepository;
+import com.nahuelcuello.portfolio.repository.ProjectRepository;
+import com.nahuelcuello.portfolio.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

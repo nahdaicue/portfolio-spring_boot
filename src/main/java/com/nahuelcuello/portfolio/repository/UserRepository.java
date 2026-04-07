@@ -1,11 +1,13 @@
 
-package com.nahuelcuello.portfolio.repositorys;
+package com.nahuelcuello.portfolio.repository;
 
 import com.nahuelcuello.portfolio.entitys.User;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserRepository extends JpaRepository <User, Long>{
-    
+    Optional<User> findByUserName(String userName);  //  Query method for login
+    //Optional<User> findByEmail(String email);
 }

@@ -4,7 +4,7 @@ import com.nahuelcuello.portfolio.DTO.portfolioDTO.PortfolioDTO;
 import com.nahuelcuello.portfolio.DTO.user.UserDTO;
 import com.nahuelcuello.portfolio.entitys.User;
 import com.nahuelcuello.portfolio.mapper.UserMapper;
-import com.nahuelcuello.portfolio.repositorys.UserRepository;
+import com.nahuelcuello.portfolio.repository.UserRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
