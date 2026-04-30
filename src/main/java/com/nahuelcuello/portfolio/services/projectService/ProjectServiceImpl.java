@@ -1,5 +1,6 @@
-package com.nahuelcuello.portfolio.services;
+package com.nahuelcuello.portfolio.services.projectService;
 
+import com.nahuelcuello.portfolio.services.projectService.ProjectService;
 import com.nahuelcuello.portfolio.entitys.Project;
 import com.nahuelcuello.portfolio.entitys.User;
 import com.nahuelcuello.portfolio.repository.ProjectRepository;

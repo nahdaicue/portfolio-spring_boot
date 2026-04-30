@@ -1,4 +1,5 @@
-package com.nahuelcuello.portfolio.DTO.user;
+
+package com.nahuelcuello.portfolio.DTO.userDTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -9,8 +10,9 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserChangePasswordDTO {
-
-    private String oldPassword;
-    private String newPassword;
+public class UserUpdateDTO {
+    
+private String name;
+private String email;
+    
 }

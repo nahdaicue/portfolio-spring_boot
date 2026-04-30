@@ -1,5 +1,5 @@
 
-package com.nahuelcuello.portfolio.services;
+package com.nahuelcuello.portfolio.services.projectService;
 
 import com.nahuelcuello.portfolio.entitys.Project;
 import java.util.List;

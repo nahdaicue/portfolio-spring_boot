@@ -30,9 +30,6 @@ public class User implements UserDetails {
     @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(name = "url_img")
-    private String urlImg;
-
     @Column(nullable = false, unique = true, length = 150)
     private String email;
 
@@ -52,6 +49,10 @@ public class User implements UserDetails {
     @EqualsAndHashCode.Exclude
     private List<Project> projects = new ArrayList<>();
 
+    //Relación con Profile
+    @OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
+    private Profile profile;
+    
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));

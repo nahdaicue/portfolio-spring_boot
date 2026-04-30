@@ -1,5 +1,6 @@
-package com.nahuelcuello.portfolio.services;
+package com.nahuelcuello.portfolio.services.userService;
 
+import com.nahuelcuello.portfolio.services.userService.UserService;
 import com.nahuelcuello.portfolio.entitys.User;
 import com.nahuelcuello.portfolio.repository.UserRepository;
 import java.util.List;
@@ -30,8 +31,7 @@ public class UserServiceImpl implements UserService {
 
         existingUser.setName(user.getName());
         existingUser.setEmail(user.getEmail());
-        existingUser.setUrlImg(user.getUrlImg());
-
+        
         return userRepository.save(existingUser);
     }
 

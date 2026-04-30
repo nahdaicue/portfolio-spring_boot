@@ -1,5 +1,5 @@
 
-package com.nahuelcuello.portfolio.services;
+package com.nahuelcuello.portfolio.services.portfolioService;
 
 import com.nahuelcuello.portfolio.DTO.portfolioDTO.PortfolioDTO;
 

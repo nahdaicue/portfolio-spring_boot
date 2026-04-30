@@ -1,6 +1,6 @@
 package com.nahuelcuello.portfolio.mapper;
 
-import com.nahuelcuello.portfolio.DTO.project.ProjectDTO;
+import com.nahuelcuello.portfolio.DTO.projectDTO.ProjectDTO;
 import com.nahuelcuello.portfolio.entitys.Project;
 
 public class ProjectMapper {

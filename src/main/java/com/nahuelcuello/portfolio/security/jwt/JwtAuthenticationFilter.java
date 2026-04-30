@@ -35,7 +35,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             return;
         }
 
-        userName = jwtService.getUserNameFromToken(token);
+        try {
+            userName = jwtService.getUserNameFromToken(token);
+        } catch (Exception e) {
+            // token vencido o inválido → deja pasar sin autenticar
+            filterChain.doFilter(request, response);
+            return;
+        }
 
         if (userName != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 

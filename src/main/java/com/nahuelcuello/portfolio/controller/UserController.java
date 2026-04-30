@@ -1,19 +1,18 @@
 package com.nahuelcuello.portfolio.controller;
 
-import com.nahuelcuello.portfolio.DTO.user.UserChangePasswordDTO;
-import com.nahuelcuello.portfolio.DTO.user.UserCreateDTO;
-import com.nahuelcuello.portfolio.DTO.user.UserDTO;
-import com.nahuelcuello.portfolio.DTO.user.UserUpdateDTO;
+import com.nahuelcuello.portfolio.DTO.userDTO.UserChangePasswordDTO;
+import com.nahuelcuello.portfolio.DTO.userDTO.UserCreateDTO;
+import com.nahuelcuello.portfolio.DTO.userDTO.UserDTO;
+import com.nahuelcuello.portfolio.DTO.userDTO.UserUpdateDTO;
 import com.nahuelcuello.portfolio.entitys.User;
 import com.nahuelcuello.portfolio.mapper.UserMapper;
-import com.nahuelcuello.portfolio.services.UserService;
+import com.nahuelcuello.portfolio.services.userService.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "*")
 public class UserController {
     
     private final UserService userService;

@@ -1,7 +1,7 @@
 
-package com.nahuelcuello.portfolio.DTO.user;
+package com.nahuelcuello.portfolio.DTO.userDTO;
 
-import com.nahuelcuello.portfolio.DTO.project.ProjectDTO;
+import com.nahuelcuello.portfolio.DTO.projectDTO.ProjectDTO;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -12,12 +12,10 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserDTO {
+public class UserCreateDTO {
     
-    private Long id;
     private String name;
     private String email;
-    private String urlImg;
-    private List<ProjectDTO> projects;
+    private String password;
     
 }

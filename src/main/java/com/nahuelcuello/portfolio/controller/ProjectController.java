@@ -1,9 +1,9 @@
 package com.nahuelcuello.portfolio.controller;
 
-import com.nahuelcuello.portfolio.DTO.project.ProjectDTO;
+import com.nahuelcuello.portfolio.DTO.projectDTO.ProjectDTO;
 import com.nahuelcuello.portfolio.entitys.Project;
 import com.nahuelcuello.portfolio.mapper.ProjectMapper;
-import com.nahuelcuello.portfolio.services.ProjectService;
+import com.nahuelcuello.portfolio.services.projectService.ProjectService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,7 +13,6 @@ import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api/projects")
-@CrossOrigin(origins = "*")
 public class ProjectController {
     
     private final ProjectService projectService;

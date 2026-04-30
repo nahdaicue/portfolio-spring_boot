@@ -1,5 +1,5 @@
 
-package com.nahuelcuello.portfolio.DTO.project;
+package com.nahuelcuello.portfolio.DTO.projectDTO;
 
 import java.util.List;
 import lombok.AllArgsConstructor;
