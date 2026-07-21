@@ -47,6 +47,7 @@ public class User implements UserDetails {
     )
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
+    @Builder.Default
     private List<Project> projects = new ArrayList<>();
 
     //Relación con Profile
