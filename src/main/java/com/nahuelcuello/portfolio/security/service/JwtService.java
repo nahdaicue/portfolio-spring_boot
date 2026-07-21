@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class JwtService {
 
+    //Pasar a variante de entorno
     private static final String SECRET_KEY = "74c14ca37b428ef2a6ff617bff18870b31288e0e0118cb8e2d6ba9e068c25c70";
 
     public String getToken(UserDetails user) {
