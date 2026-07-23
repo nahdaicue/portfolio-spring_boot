@@ -2,6 +2,8 @@ package com.nahuelcuello.portfolio.mapper;
 
 import com.nahuelcuello.portfolio.DTO.projectDTO.ProjectDTO;
 import com.nahuelcuello.portfolio.entitys.Project;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ProjectMapper {
 
@@ -40,6 +42,15 @@ public class ProjectMapper {
         project.setUrlPublicBack(dto.getUrlPublicBack());
 
         return project;
+    }
+
+    public static List<ProjectDTO> toDtoList(List<Project> projects) {
+        if (projects == null) {
+            return List.of();
+        }
+        return projects.stream()
+                .map(ProjectMapper::toDto)
+                .collect(Collectors.toList());
     }
 
 }

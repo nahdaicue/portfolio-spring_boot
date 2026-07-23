@@ -6,6 +6,7 @@ import com.nahuelcuello.portfolio.entitys.User;
 import com.nahuelcuello.portfolio.mapper.UserMapper;
 import com.nahuelcuello.portfolio.entitys.Profile;
 import com.nahuelcuello.portfolio.mapper.ProfileMapper;
+import com.nahuelcuello.portfolio.mapper.ProjectMapper;
 import com.nahuelcuello.portfolio.repository.ProfileRepository;
 import com.nahuelcuello.portfolio.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -31,6 +32,7 @@ public class PortfolioServiceImpl implements PortfolioService {
         PortfolioDTO portfolioDTO = new PortfolioDTO();
         portfolioDTO.setUser(UserMapper.toDto(user));
         portfolioDTO.setProfile(ProfileMapper.toDto(profile));
+         portfolioDTO.setProjects(ProjectMapper.toDtoList(user.getProjects()));
 
         return portfolioDTO;
     }
