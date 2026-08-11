@@ -9,6 +9,7 @@ import lombok.Setter;
 @Getter @Setter @NoArgsConstructor @AllArgsConstructor
 public class ProfileUpdateDTO {
     private String title;
+    private String username; 
     private String description;
     private String aboutMe;
     private String urlImg;
